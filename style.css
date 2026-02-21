@@ -15,18 +15,20 @@ nav {
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  flex-wrap: wrap; /* يسمح بتغليف الروابط في الشاشات الصغيرة */
+  transition: all 0.3s ease; /* لتكبير سلس */
 }
 
 nav a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
-  margin-top: 5px; /* يعطي مسافة بسيطة عند التغليف */
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .container {
   width: 80%;
+  max-width: 800px;
   margin: auto;
   text-align: center;
   padding: 40px;
@@ -36,17 +38,19 @@ nav a {
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   margin-top: 80px;
-  box-sizing: border-box;
+  transition: all 0.3s ease; /* لتكبير سلس */
 }
 
 input {
   padding: 10px;
   width: 250px;
-  max-width: 90%; /* مناسب للشاشات الصغيرة */
+  max-width: 90%;
   margin: 10px;
   border-radius: 20px;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 button {
@@ -57,8 +61,9 @@ button {
   cursor: pointer;
   border-radius: 20px;
   margin-top: 10px;
-  width: auto;
   min-width: 120px;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
 .card {
@@ -67,11 +72,8 @@ button {
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  word-break: break-word; /* يكسر النص الطويل على الموبايل */
-}
-
-.hidden {
-  display: none;
+  word-break: break-word;
+  transition: all 0.3s ease;
 }
 
 footer {
@@ -88,6 +90,7 @@ footer {
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 footer a {
@@ -104,32 +107,40 @@ footer a:hover {
 @media screen and (max-width: 768px) {
   .container {
     width: 95%;
-    padding: 20px;
-    margin-top: 60px;
+    padding: 50px; /* أكبر لتغطية الشاشة */
+    margin-top: 40px;
   }
 
   nav {
-    justify-content: center;
-    text-align: center;
+    padding: 25px; /* تكبير الناف */
+    flex-direction: column; /* تغليف الروابط */
+    font-size: 18px;
   }
 
   nav a {
-    margin-left: 10px;
-    margin-right: 10px;
+    font-size: 18px;
+    margin: 10px 0;
   }
 
   input {
     width: 90%;
-    font-size: 16px;
+    font-size: 18px;
+    padding: 15px;
   }
 
   button {
     width: 90%;
-    font-size: 16px;
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  .card {
+    font-size: 18px;
+    padding: 30px;
   }
 
   footer {
-    font-size: 13px;
-    padding: 10px 5px;
+    font-size: 16px;
+    padding: 20px;
   }
 }
