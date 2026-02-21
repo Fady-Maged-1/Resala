@@ -1,8 +1,24 @@
+/* السطر ده بيمنع الـ padding إنه يكسر أبعاد العناصر */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   direction: rtl;
   margin: 0;
-  background: #f4f6f8;
+  background: #f4f6f8; /* ده لون احتياطي لو الفيديو لسه بيحمل */
+}
+
+/* تنسيق فيديو الخلفية عشان يغطي الشاشة كلها */
+.bg-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* عشان يفضل ورا كل حاجة */
+  object-fit: cover; /* عشان الفيديو ميتمطش وشكله يبوظ */
 }
 
 nav {
@@ -10,47 +26,43 @@ nav {
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap; /* عشان لو الشاشة صغيرة اللينكات تنزل تحت بشكل منظم */
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease; /* لتكبير سلس */
 }
 
 nav a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
 }
 
 .container {
-  width: 80%;
-  max-width: 800px;
+  width: 90%; /* تم التعديل لـ 90% عشان يكون مناسب للموبايل */
+  max-width: 800px; /* عشان ميبقاش عريض بزيادة على الكمبيوتر */
   margin: auto;
   text-align: center;
-  padding: 40px;
+  padding: 40px 20px; /* قللت الـ padding الجانبي للموبايل */
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   margin-top: 80px;
-  transition: all 0.3s ease; /* لتكبير سلس */
+  margin-bottom: 100px; /* مسافة من تحت عشان الفوتر ميغطيش على المحتوى */
 }
 
 input {
   padding: 10px;
-  width: 250px;
-  max-width: 90%;
-  margin: 10px;
+  width: 100%; /* هيتمدد بعرض الكونتينر */
+  max-width: 250px; /* بس آخره 250 بيكسل زي ما كنت كاتب */
+  margin: 10px auto;
   border-radius: 20px;
   border: 1px solid #ccc;
-  box-sizing: border-box;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  display: block; /* عشان يجي في سطر لوحده لو الشاشة صغيرة */
 }
 
 button {
@@ -60,10 +72,6 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 20px;
-  margin-top: 10px;
-  min-width: 120px;
-  font-size: 16px;
-  transition: all 0.3s ease;
 }
 
 .card {
@@ -72,25 +80,27 @@ button {
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  word-break: break-word;
-  transition: all 0.3s ease;
+}
+
+.hidden {
+  display: none;
 }
 
 footer {
   text-align: center;
-  padding: 15px 10px;
   position: fixed;
   width: 100%;
   bottom: 0;
   font-size: 14px;
   color: white;
-  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  background: rgba(44, 62, 80, 0.85); /* دمجت الألوان عشان تأثير الشفافية يظبط مع اللون الغامق */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-radius: 15px;
+  border-top-left-radius: 15px; /* الفوتر محتاج radius من فوق بس */
+  border-top-right-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
-  transition: all 0.3s ease;
+  z-index: 10;
 }
 
 footer a {
@@ -101,46 +111,4 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
-}
-
-/* Media Queries للشاشات الصغيرة */
-@media screen and (max-width: 768px) {
-  .container {
-    width: 95%;
-    padding: 50px; /* أكبر لتغطية الشاشة */
-    margin-top: 40px;
-  }
-
-  nav {
-    padding: 25px; /* تكبير الناف */
-    flex-direction: column; /* تغليف الروابط */
-    font-size: 18px;
-  }
-
-  nav a {
-    font-size: 18px;
-    margin: 10px 0;
-  }
-
-  input {
-    width: 90%;
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  button {
-    width: 90%;
-    font-size: 18px;
-    padding: 15px;
-  }
-
-  .card {
-    font-size: 18px;
-    padding: 30px;
-  }
-
-  footer {
-    font-size: 16px;
-    padding: 20px;
-  }
 }
