@@ -133,3 +133,31 @@ footer a:hover {
     font-size: 1.5rem; /* تصغير حجم العناوين للموبايل */
   }
 }
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    
+    h1 {
+        font-size: 1.2rem; /* تصغير الخط في الموبايل */
+    }
+
+    nav {
+        flex-direction: column; /* اللوجو واللينكات تحت بعض */
+        gap: 10px;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
