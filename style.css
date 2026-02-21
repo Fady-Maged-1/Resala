@@ -1,59 +1,92 @@
+/* === base fixes === */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   direction: rtl;
   margin: 0;
   background: #f4f6f8;
- 
-   
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
+  /* مهم: مساحة تعويض عشان الفوتر الثابت مايغطيش المحتوى */
+  padding-bottom: 100px; /* عدل لو ارتفاع الفوتر اتغير */
 }
 
+/* ===== nav ===== */
 nav {
-  
   color: white;
-  padding: 15px;
+  padding: 12px 16px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
-    backdrop-filter: blur(10px);           /* تأثير الضبابية */
-    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
+  gap: 12px;
 
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  width: calc(100% - 32px);
+  max-width: 1200px;
+  margin: 12px auto;
 }
 
 nav a {
   color: white;
-  margin-left: 15px;
   text-decoration: none;
-
- 
+  /* ليتوافق مع direction: rtl */
+  margin-inline-start: 15px;
 }
 
+/* ===== container / hero box ===== */
 .container {
-    
-   
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  max-width: 900px; /* أقصى عرض على ديسكتوب */
+  margin: 80px auto 20px;
   text-align: center;
   padding: 40px;
-  
-  
-    background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
-    backdrop-filter: blur(10px);           /* تأثير الضبابية */
-    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
 
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-     margin-top: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-input {
-  padding: 10px;
-  width: 250px;
-  margin: 10px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+/* لو عندك صورة خلفية تغطي الصفحة استخدم هذا (اختياري) */
+/*
+html, body {
+  height: 100%;
+}
+.hero-bg {
+  min-height: calc(100vh - 100px); 
+  background-image: url('...'); 
+  background-size: cover;
+  background-position: center;
+}
+*/
+
+/* ===== inputs & buttons ===== */
+input,
+textarea,
+select {
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 520px; /* للحواسيب */
+  margin: 10px auto;
+  display: block;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.9);
 }
 
 button {
@@ -63,102 +96,91 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 20px;
+  display: inline-block;
+  min-width: 110px;
 }
 
+/* ===== card ===== */
 .card {
   background: white;
   padding: 20px;
   margin-top: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
 }
 
+/* ===== hide util ===== */
 .hidden {
-  display: none;
+  display: none !important;
 }
+
+/* ===== footer =====
+   نخلي الفوتر مركزي بعرض محدود عشان مايغطيش المحتوى
+*/
 footer {
-  background: #2c3e50;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12px;
+  width: calc(100% - 32px);
+  max-width: 980px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   text-align: center;
-  padding: 15px 0;
-  position: fixed;   /* يخلي ثابت في أسفل الصفحة */
-  width: 100%;
-  bottom: 0;
-  font-size: 14px;
-
-  color: white;
-  padding: 15px;
-  
-   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
-    backdrop-filter: blur(10px);           /* تأثير الضبابية */
-    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
-
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  z-index: 999;
 }
 
 footer a {
-  color: #3498db;
+  color: #a9d8ff;
   text-decoration: none;
   margin: 0 5px;
 }
-
 footer a:hover {
   text-decoration: underline;
 }
 
-/* كود خاص للموبايلات فقط (الشاشات الأصغر من 600 بيكسل) */
-@media screen and (max-width: 600px) {
+/* ========== responsive ========== */
+@media (max-width: 900px) {
+  .container { padding: 28px; margin-top: 60px; }
+  nav { padding: 10px 14px; width: calc(100% - 28px); }
+  input, textarea { max-width: 100%; } /* تأكد الانبوت يمتد داخل الحاوية */
+}
+
+@media (max-width: 600px) {
   .container {
-    width: 95%;      /* مساحة أكبر شوية على الموبايل */
-    padding: 20px;   /* تقليل الحشو الداخلي عشان نوفر مساحة */
-    margin-top: 40px; /* تقليل المسافة من فوق عشان الشاشة صغيرة */
+    width: calc(100% - 20px);
+    padding: 18px;
+    margin-top: 36px;
+    border-radius: 12px;
   }
 
   nav {
-    flex-direction: column; /* اللينكات تيجي تحت بعض لو المكان ضيق */
-    gap: 10px;
+    flex-direction: column;
+    gap: 8px;
     text-align: center;
+    align-items: center;
   }
 
-  nav a {
-    margin: 5px 0;
-  }
+  nav a { margin-inline-start: 0; margin: 4px 0; }
 
-  input {
-    width: 90%; /* الانبوت ياخد عرض الشاشة تقريباً */
-  }
-  
-  h1 {
-    font-size: 1.5rem; /* تصغير حجم العناوين للموبايل */
-  }
-}
-
-@media screen and (max-width: 480px) {
-    .container {
-        width: 400px;
-        padding: 15px;
-        margin-top: 20px;
-    }
-    
-    h1 {
-        font-size: 1.2rem; /* تصغير الخط في الموبايل */
-    }
-
-    nav {
-        flex-direction: column; /* اللوجو واللينكات تحت بعض */
-        gap: 10px;
-      width: 200px;
-    }
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
+  input, textarea {
     width: 100%;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    text-align: center;
-    font-size: 12px;
+    max-width: 100%;
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  h1 { font-size: 1.4rem; }
+  button { width: auto; }
+}
+
+@media (max-width: 420px) {
+  body { padding-bottom: 120px; } /* لو الفوتر ياخد مساحة أكبر على موبايلات صغيرة */
+  .container { padding: 14px; margin-top: 24px; border-radius: 10px; }
+  h1 { font-size: 1.2rem; }
+  nav { width: calc(100% - 18px); }
 }
