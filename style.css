@@ -195,3 +195,46 @@ footer a:hover {
   h1 { font-size: 1.2rem; }
   nav { width: calc(100% - 18px); }
 }
+
+@media (max-width: 768px) {
+
+  body {
+    font-size: 18px; /* يكبر النص الأساسي */
+  }
+
+  nav {
+    width: 95%;
+    padding: 20px;
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  .container {
+    width: 95%;
+    padding: 30px;
+    margin-top: 60px;
+  }
+
+  h1 {
+    font-size: 2rem; /* تكبير العنوان */
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  button {
+    font-size: 18px;
+    padding: 14px 28px;
+  }
+
+}
