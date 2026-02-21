@@ -1,0 +1,108 @@
+body {
+  font-family: Arial;
+  direction: rtl;
+  margin: 0;
+  background: #f4f6f8;
+ 
+   
+
+}
+
+nav {
+  
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
+    backdrop-filter: blur(10px);           /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+nav a {
+  color: white;
+  margin-left: 15px;
+  text-decoration: none;
+
+ 
+}
+
+.container {
+    
+   
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding: 40px;
+  
+  
+    background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
+    backdrop-filter: blur(10px);           /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+     margin-top: 80px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+  margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  background: #3498db;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.hidden {
+  display: none;
+}
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;   /* يخلي ثابت في أسفل الصفحة */
+  width: 100%;
+  bottom: 0;
+  font-size: 14px;
+
+  color: white;
+  padding: 15px;
+  
+   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
+    backdrop-filter: blur(10px);           /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+footer a {
+  color: #3498db;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

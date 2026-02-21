@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>رسالة | Resala</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="img/images (1).jpeg">
+</head>
+
+<body>
+
+<nav>
+  <h2 >رسالة | Resala</h2>
+  <div>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">احنا مين</a>
+  </div>
+</nav>
+
+<div class="container" >
+
+<h1 >أهلاً بيك/ي ❤️</h1>
+<p>اكتب اسمك لتصلك رسالة اليوم</p>
+
+<input id="username" placeholder="اكتب اسمك">
+<button onclick="showMessage()">اعرض الرسالة</button>
+
+<div id="result" class="card hidden">
+  <h3 id="welcome"></h3>
+  <p id="message"></p>
+  <button onclick="shareMessage()">مشاركة الرسالة</button>
+</div>
+
+<hr>
+
+<h2>حاسس ب ايه ؟</h2>
+<input id="chatInput" placeholder="اكتب شعورك الآن...">
+<button onclick="sendChat()">إرسال</button>
+
+<div id="chatResult"></div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="chat.js"></script>
+
+<!-- الفيديو كخلفية -->
+<video class="video-background" autoplay muted loop>
+  <source src="img/JESUS CHRIST HOLY LIGHT __ 4K LIVE WALLPAPER.mp4" type="video/mp4">
+  متصفحك لا يدعم الفيديو
+</video>
+
+<style>
+  .video-background {
+    position: fixed;      /* يبقى ثابت على الشاشة */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* يغطي كل الشاشة بدون تشويه */
+    z-index: -1;          /* خلف كل المحتوى */
+  }
+</style>
+</body>
+</html>
