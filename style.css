@@ -1,68 +1,59 @@
-/* السطر ده بيمنع الـ padding إنه يكسر أبعاد العناصر */
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   direction: rtl;
   margin: 0;
-  background: #f4f6f8; /* ده لون احتياطي لو الفيديو لسه بيحمل */
-}
+  background: #f4f6f8;
+ 
+   
 
-/* تنسيق فيديو الخلفية عشان يغطي الشاشة كلها */
-.bg-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1; /* عشان يفضل ورا كل حاجة */
-  object-fit: cover; /* عشان الفيديو ميتمطش وشكله يبوظ */
 }
 
 nav {
+  
   color: white;
   padding: 15px;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap; /* عشان لو الشاشة صغيرة اللينكات تنزل تحت بشكل منظم */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
+    backdrop-filter: blur(10px);           /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 nav a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
+
+ 
 }
 
 .container {
-  width: 90%; /* تم التعديل لـ 90% عشان يكون مناسب للموبايل */
-  max-width: 800px; /* عشان ميبقاش عريض بزيادة على الكمبيوتر */
+    
+   
+  width: 80%;
   margin: auto;
   text-align: center;
-  padding: 40px 20px; /* قللت الـ padding الجانبي للموبايل */
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  margin-top: 80px;
-  margin-bottom: 100px; /* مسافة من تحت عشان الفوتر ميغطيش على المحتوى */
+  padding: 40px;
+  
+  
+    background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
+    backdrop-filter: blur(10px);           /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+     margin-top: 80px;
 }
 
 input {
   padding: 10px;
-  width: 100%; /* هيتمدد بعرض الكونتينر */
-  max-width: 250px; /* بس آخره 250 بيكسل زي ما كنت كاتب */
-  margin: 10px auto;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  display: block; /* عشان يجي في سطر لوحده لو الشاشة صغيرة */
+  width: 250px;
+  margin: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -85,22 +76,25 @@ button {
 .hidden {
   display: none;
 }
-
 footer {
+  background: #2c3e50;
+  color: white;
   text-align: center;
-  position: fixed;
+  padding: 15px 0;
+  position: fixed;   /* يخلي ثابت في أسفل الصفحة */
   width: 100%;
   bottom: 0;
   font-size: 14px;
+
   color: white;
   padding: 15px;
-  background: rgba(44, 62, 80, 0.85); /* دمجت الألوان عشان تأثير الشفافية يظبط مع اللون الغامق */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-top-left-radius: 15px; /* الفوتر محتاج radius من فوق بس */
-  border-top-right-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  z-index: 10;
+  
+   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
+    backdrop-filter: blur(10px);           /* تأثير الضبابية */
+    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
+
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 footer a {
@@ -111,4 +105,31 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* كود خاص للموبايلات فقط (الشاشات الأصغر من 600 بيكسل) */
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;      /* مساحة أكبر شوية على الموبايل */
+    padding: 20px;   /* تقليل الحشو الداخلي عشان نوفر مساحة */
+    margin-top: 40px; /* تقليل المسافة من فوق عشان الشاشة صغيرة */
+  }
+
+  nav {
+    flex-direction: column; /* اللينكات تيجي تحت بعض لو المكان ضيق */
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 5px 0;
+  }
+
+  input {
+    width: 90%; /* الانبوت ياخد عرض الشاشة تقريباً */
+  }
+  
+  h1 {
+    font-size: 1.5rem; /* تصغير حجم العناوين للموبايل */
+  }
 }
