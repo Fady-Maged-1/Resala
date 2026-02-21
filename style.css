@@ -1,59 +1,52 @@
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   direction: rtl;
   margin: 0;
   background: #f4f6f8;
- 
-   
-
 }
 
 nav {
-  
   color: white;
   padding: 15px;
   display: flex;
   justify-content: space-between;
-   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
-    backdrop-filter: blur(10px);           /* تأثير الضبابية */
-    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
-
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  flex-wrap: wrap; /* يسمح بتغليف الروابط في الشاشات الصغيرة */
 }
 
 nav a {
   color: white;
   margin-left: 15px;
   text-decoration: none;
-
- 
+  margin-top: 5px; /* يعطي مسافة بسيطة عند التغليف */
 }
 
 .container {
-    
-   
   width: 80%;
   margin: auto;
   text-align: center;
   padding: 40px;
-  
-  
-    background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
-    backdrop-filter: blur(10px);           /* تأثير الضبابية */
-    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
-
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-     margin-top: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 80px;
+  box-sizing: border-box;
 }
 
 input {
   padding: 10px;
   width: 250px;
+  max-width: 90%; /* مناسب للشاشات الصغيرة */
   margin: 10px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 button {
@@ -63,6 +56,9 @@ button {
   color: white;
   cursor: pointer;
   border-radius: 20px;
+  margin-top: 10px;
+  width: auto;
+  min-width: 120px;
 }
 
 .card {
@@ -71,30 +67,27 @@ button {
   margin-top: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  word-break: break-word; /* يكسر النص الطويل على الموبايل */
 }
 
 .hidden {
   display: none;
 }
+
 footer {
-  background: #2c3e50;
-  color: white;
   text-align: center;
-  padding: 15px 0;
-  position: fixed;   /* يخلي ثابت في أسفل الصفحة */
+  padding: 15px 10px;
+  position: fixed;
   width: 100%;
   bottom: 0;
   font-size: 14px;
-
   color: white;
-  padding: 15px;
-  
-   background: rgba(255, 255, 255, 0.15); /* لون شبه شفاف */
-    backdrop-filter: blur(10px);           /* تأثير الضبابية */
-    -webkit-backdrop-filter: blur(10px);   /* دعم Safari */
-
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
 }
 
 footer a {
@@ -105,4 +98,38 @@ footer a {
 
 footer a:hover {
   text-decoration: underline;
+}
+
+/* Media Queries للشاشات الصغيرة */
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav a {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  input {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  button {
+    width: 90%;
+    font-size: 16px;
+  }
+
+  footer {
+    font-size: 13px;
+    padding: 10px 5px;
+  }
 }
